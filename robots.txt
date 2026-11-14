@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /bookmarks.html
+
+Sitemap: https://example.com/sitemap.xml

@@ -1,0 +1,142 @@
+[
+  {
+    "id": "govt",
+    "slug": "govt-jobs",
+    "nameBn": "সরকারি চাকরি",
+    "nameEn": "Government Jobs",
+    "icon": "building",
+    "description": "বাংলাদেশ সরকারি কর্ম কমিশন (BPSC), বিভিন্ন মন্ত্রণালয়, অধিদপ্তর ও সরকারি প্রতিষ্ঠানের সর্বশেষ নিয়োগ বিজ্ঞপ্তি ও পরীক্ষার তথ্য।",
+    "badgeColor": "#1b5e20",
+    "count": 48
+  },
+  {
+    "id": "bank",
+    "slug": "bank-jobs",
+    "nameBn": "ব্যাংক জব",
+    "nameEn": "Bank Jobs",
+    "icon": "landmark",
+    "description": "বাংলাদেশ ব্যাংক সমন্বিত ব্যাংকার্স সিলেকশন কমিটি (BSCS), সরকারি ও বেসরকারি বাণিজ্যিক ব্যাংকের অফিসার ও ক্যাশ পদের নিয়োগ বিজ্ঞপ্তি।",
+    "badgeColor": "#0d47a1",
+    "count": 32
+  },
+  {
+    "id": "private",
+    "slug": "private-jobs",
+    "nameBn": "বেসরকারি চাকরি",
+    "nameEn": "Private Jobs",
+    "icon": "briefcase",
+    "description": "শীর্ষস্থানীয় কর্পোরেট প্রতিষ্ঠান, গ্রুপ অব কোম্পানিজ, মাল্টিন্যাশনাল কোম্পানি এবং দেশীয় বাণিজ্যিক প্রতিষ্ঠানের চাকরির সুযোগ।",
+    "badgeColor": "#e65100",
+    "count": 75
+  },
+  {
+    "id": "ngo",
+    "slug": "ngo-jobs",
+    "nameBn": "এনজিও জব",
+    "nameEn": "NGO Jobs",
+    "icon": "users",
+    "description": "ব্র্যাক, আশা, গ্রামীণ ব্যাংক, ইউএসএআইডি, ইউনিসেফ এবং অন্যান্য জাতীয় ও আন্তর্জাতিক উন্নয়ন সংস্থার নিয়োগ বিজ্ঞপ্তি।",
+    "badgeColor": "#4a148c",
+    "count": 24
+  },
+  {
+    "id": "teaching",
+    "slug": "teaching-jobs",
+    "nameBn": "শিক্ষক নিয়োগ",
+    "nameEn": "Teaching Jobs",
+    "icon": "graduation-cap",
+    "description": "এনটিআরসিএ (NTRCA), প্রাথমিক শিক্ষক নিয়োগ, সরকারি ও বেসরকারি কলেজ এবং বিশ্ববিদ্যালয়ের শিক্ষক পদের খবর।",
+    "badgeColor": "#006064",
+    "count": 19
+  },
+  {
+    "id": "it",
+    "slug": "it-jobs",
+    "nameBn": "আইটি ও প্রযুক্তি",
+    "nameEn": "IT & Technology",
+    "icon": "code",
+    "description": "সফটওয়্যার ইঞ্জিনিয়ার, ওয়েব ডেভেলপার, ডেটা অ্যানালিস্ট, ইউআই/ইউএক্স ডিজাইনার ও টেকনিক্যাল পদের সার্কুলার।",
+    "badgeColor": "#311b92",
+    "count": 41
+  },
+  {
+    "id": "defence",
+    "slug": "defence-jobs",
+    "nameBn": "প্রতিরক্ষা বাহিনী",
+    "nameEn": "Defence Jobs",
+    "icon": "shield",
+    "description": "বাংলাদেশ সেনাবাহিনী, নৌবাহিনী, বিমানবাহিনী, পুলিশ, বিজিবি, আনসার ও ফায়ার সার্ভিসের অফিসার ও সৈনিক পদের সার্কুলার।",
+    "badgeColor": "#2e7d32",
+    "count": 15
+  },
+  {
+    "id": "international",
+    "slug": "international-jobs",
+    "nameBn": "আন্তর্জাতিক চাকরি",
+    "nameEn": "International Jobs",
+    "icon": "globe",
+    "description": "জাতিসংঘ (UN), বিশ্বব্যাংক, এশীয় উন্নয়ন ব্যাংক (ADB) ও বিদেশের স্বনামধন্য প্রতিষ্ঠানে দূরবর্তী ও প্রবাসী চাকরির সুযোগ।",
+    "badgeColor": "#004d40",
+    "count": 12
+  },
+  {
+    "id": "part-time",
+    "slug": "part-time-jobs",
+    "nameBn": "খণ্ডকালীন ও রিমোট",
+    "nameEn": "Part-time & Remote",
+    "icon": "clock",
+    "description": "শিক্ষার্থীদের জন্য পার্ট-টাইম কাজ, ওয়ার্ক ফ্রম হোম এবং ফ্রিল্যান্সিং প্রোজেক্ট ভিত্তিক কাজের সন্ধান।",
+    "badgeColor": "#f57f17",
+    "count": 22
+  },
+  {
+    "id": "internship",
+    "slug": "internship",
+    "nameBn": "ইন্টার্নশিপ",
+    "nameEn": "Internship Opportunities",
+    "icon": "award",
+    "description": "স্নাতক ও ফ্রেশ গ্র্যাজুয়েটদের অভিজ্ঞতা অর্জনের জন্য ব্যাংক, করপোরেট ও আইটি প্রতিষ্ঠানের ইন্টার্নশিপ প্রোগ্রাম।",
+    "badgeColor": "#00838f",
+    "count": 16
+  },
+  {
+    "id": "exam-results",
+    "slug": "exam-results",
+    "nameBn": "পরীক্ষার ফলাফল",
+    "nameEn": "Exam Results",
+    "icon": "file-check",
+    "description": "বিসিএস, প্রাথমিক শিক্ষক, সমন্বিত ব্যাংক ও বিভিন্ন সরকারি দপ্তরের প্রিলিমিনারি, লিখিত ও মৌখিক পরীক্ষার ফলাফল।",
+    "badgeColor": "#c2185b",
+    "count": 29
+  },
+  {
+    "id": "admit-card",
+    "slug": "admit-card",
+    "nameBn": "প্রবেশপত্র ও আসন",
+    "nameEn": "Admit Cards & Seat Plan",
+    "icon": "id-card",
+    "description": "নিয়োগ পরীক্ষার প্রবেশপত্র ডাউনলোড লিঙ্ক, পরীক্ষার তারিখ ও কেন্দ্রভিত্তিক আসন বিন্যাস সংক্রান্ত নোটিশ।",
+    "badgeColor": "#d84315",
+    "count": 27
+  },
+  {
+    "id": "exam-updates",
+    "slug": "exam-updates",
+    "nameBn": "ভর্তি ও পরীক্ষা নোটিশ",
+    "nameEn": "Exam Updates",
+    "icon": "bell",
+    "description": "বিশ্ববিদ্যালয় ভর্তি পরীক্ষা, চাকরির লিখিত ও মৌখিক পরীক্ষার রুটিন এবং সংশোধিত সময়সূচির আপডেট।",
+    "badgeColor": "#37474f",
+    "count": 31
+  },
+  {
+    "id": "career-advice",
+    "slug": "career-advice",
+    "nameBn": "ক্যারিয়ার পরামর্শ",
+    "nameEn": "Career Advice & Guide",
+    "icon": "book-open",
+    "description": "বিসিএস প্রস্তুতি, ভাইভা টিপস, জীবনবৃত্তান্ত (CV) তৈরি, সাধারণ জ্ঞান ও চাকরির প্রস্তুতিমূলক নির্দেশিকা।",
+    "badgeColor": "#283593",
+    "count": 53
+  }
+]

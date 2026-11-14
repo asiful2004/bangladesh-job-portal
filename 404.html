@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>পৃষ্ঠাটি পাওয়া যায়নি (404 Not Found) | চাকরি বার্তা</title>
+  
+  <meta name="description" content="অনুরোধকৃত ওয়েব পৃষ্ঠাটি খুঁজে পাওয়া যায়নি। চাকরি বার্তা হোমপেজ বা ক্যাটাগরি ব্রাউজ করুন।">
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <script src="assets/js/theme.js"></script>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-main">
+      <div class="header-brand-group">
+        <button class="mobile-toggle-btn" id="mobile-menu-toggle" aria-label="মেনু খুলুন" title="মেনু">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+
+        <a href="index.html" class="brand-logo-link" aria-label="চাকরি বার্তা হোমপেজ">
+          <img src="assets/images/logo.svg" alt="চাকরি বার্তা লোগো" class="brand-logo-img" width="220" height="52">
+        </a>
+      </div>
+
+      <div style="flex:1;"></div>
+
+      <div class="header-actions">
+        <!-- Mobile Search Trigger Button -->
+        <button class="header-btn mobile-search-toggle-btn" id="mobile-search-toggle" aria-label="সার্চ খুলুন" title="অনুসন্ধান">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+
+        <a href="bookmarks.html" class="header-btn header-bookmark-btn" title="সংরক্ষিত বিজ্ঞপ্তি" aria-label="সংরক্ষিত বিজ্ঞপ্তি">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          <span class="header-btn-label">বুকমার্ক</span>
+          <span class="bookmark-count-badge" style="display:none;">০</span>
+        </a>
+
+        <button class="theme-toggle-btn" aria-label="ডার্ক মোড টগল" title="থিম পরিবর্তন">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Expandable Mobile Search Bar -->
+    <div class="mobile-search-bar" id="mobile-search-bar" aria-label="মোবাইল সার্চ">
+      <form class="mobile-search-form" id="mobile-search-form" role="search">
+        <input type="search" id="mobile-search-input" placeholder="সার্কুলার, প্রতিষ্ঠান বা পদবি খুঁজুন..." autocomplete="off">
+        <button type="submit" class="mobile-search-submit" aria-label="খুঁজুন">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <button type="button" class="mobile-search-close" id="mobile-search-close" aria-label="সার্চ বন্ধ করুন">&times;</button>
+      </form>
+    </div>
+
+    <nav class="site-nav" aria-label="প্রধান নেভিগেশন">
+      <div class="container">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html">হোমপেজ</a></li>
+          <li class="nav-item"><a href="category.html?cat=govt">সরকারি চাকরি</a></li>
+          <li class="nav-item"><a href="category.html?cat=bank">ব্যাংক জব</a></li>
+          <li class="nav-item"><a href="category.html?cat=private">বেসরকারি চাকরি</a></li>
+          <li class="nav-item"><a href="search.html">অনুসন্ধান</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer Menu & Overlay -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="মোবাইল সাইডবার মেনু">
+    <div class="drawer-header">
+      <img src="assets/images/logo.svg" alt="চাকরি বার্তা" class="drawer-logo" width="160" height="40">
+      <button class="drawer-close-btn" id="mobile-menu-close" aria-label="মেনু বন্ধ করুন">&times;</button>
+    </div>
+    <ul class="drawer-nav-list">
+      <li class="drawer-nav-item"><a href="index.html">হোমপেজ</a></li>
+      <li class="drawer-nav-item"><a href="category.html?cat=govt">সরকারি চাকরি</a></li>
+      <li class="drawer-nav-item"><a href="category.html?cat=bank">ব্যাংক জব</a></li>
+      <li class="drawer-nav-item"><a href="category.html?cat=private">বেসরকারি চাকরি</a></li>
+      <li class="drawer-nav-item"><a href="category.html?cat=ngo">এনজিও জব</a></li>
+      <li class="drawer-nav-item"><a href="search.html">সব সার্কুলার সার্চ</a></li>
+      <li class="drawer-nav-item"><a href="about.html">আমাদের সম্পর্কে</a></li>
+      <li class="drawer-nav-item"><a href="contact.html">যোগাযোগ</a></li>
+    </ul>
+  </aside>
+
+  <main class="container" style="margin: 40px auto; max-width: 700px; text-align: center;">
+    <div class="article-content-body error-page-card">
+      <div class="error-code-badge">৪০৪</div>
+      <h1 class="content-page-title" style="color: var(--text-main);">দুঃখিত! পৃষ্ঠাটি খুঁজে পাওয়া যায়নি</h1>
+      <p style="font-size: 1rem; color: var(--text-secondary); max-width: 500px; margin: 0 auto 25px; line-height: 1.6;">
+        আপনি যে লিংকটিতে ক্লিক করেছেন তা হয়তো সরানো হয়েছে বা ইউআরএল (URL) টাইপে কোনো ভুল হয়েছে।
+      </p>
+
+      <form action="search.html" method="GET" style="max-width: 440px; margin: 0 auto 30px;">
+        <div class="search-input-wrapper">
+          <input type="search" name="q" placeholder="পছন্দের সার্কুলারটি এখানে খুঁজুন..." autocomplete="off">
+          <button type="submit" class="search-submit-btn" aria-label="খুঁজুন">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+        </div>
+      </form>
+
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <a href="index.html" class="btn btn-primary">
+          <span>হোমপেজে ফিরে যান</span>
+        </a>
+        <a href="category.html?cat=govt" class="btn btn-secondary">
+          <span>সরকারি চাকরি ব্রাউজ করুন</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border:none; padding-top:0;">
+        <p>&copy; ২০২৬ চাকরি বার্তা (Chakri Barta). সর্বস্বত্ব সংরক্ষিত।</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/ads-config.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

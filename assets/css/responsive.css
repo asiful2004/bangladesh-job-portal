@@ -1,0 +1,1263 @@
+/**
+ * ====================================================================
+ * CHAKRI BARTA - RESPONSIVE STYLESHEET (RESPONSIVE.CSS)
+ * COMPREHENSIVE MOBILE OPTIMIZATIONS FOR HEADER, BODY & COMPONENTS
+ * ====================================================================
+ */
+
+/* ====================================================================
+   MOBILE NAVIGATION DRAWER & OVERLAY (GLOBAL COMPONENT)
+   ==================================================================== */
+.mobile-nav-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-overlay.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  max-width: 85vw;
+  background-color: var(--bg-card);
+  z-index: 999;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.25);
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.mobile-nav-drawer.is-open {
+  transform: translateX(0);
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-subtle);
+}
+
+.drawer-logo {
+  height: 38px;
+  width: auto;
+}
+
+.drawer-close-btn {
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--text-main);
+  padding: 4px 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.drawer-nav-list {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0;
+}
+
+.drawer-nav-item a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  border-left: 4px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.drawer-nav-item a:hover,
+.drawer-nav-item.active a {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  border-left-color: var(--primary);
+}
+
+.drawer-footer {
+  margin-top: auto;
+  padding: 20px;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-subtle);
+}
+
+/* ====================================================================
+   BREAKPOINT: Max-width 1024px (Tablets & Medium Screens)
+   ==================================================================== */
+@media (max-width: 1024px) {
+  .main-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .sidebar-column {
+    order: 2;
+    min-width: 0;
+  }
+
+  .main-column {
+    order: 1;
+    min-width: 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .footer-col-about {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ====================================================================
+   BREAKPOINT: Max-width 768px (Mobile Devices & Small Tablets)
+   ==================================================================== */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 60px;
+  }
+
+  /* --------------------------------------------------
+     1. Mobile Header & Navigation Strip
+     -------------------------------------------------- */
+  .top-bar {
+    display: none; /* Hide top bar on mobile to preserve screen space */
+  }
+
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 990;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .header-main {
+    padding: 8px 0;
+    gap: 8px;
+  }
+
+  .header-brand-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    flex-shrink: 1;
+  }
+
+  .mobile-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: var(--radius-md);
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    flex-shrink: 0;
+    padding: 0;
+    transition: all 0.2s ease;
+  }
+
+  .mobile-toggle-btn:active {
+    background-color: var(--bg-subtle);
+    transform: scale(0.95);
+  }
+
+  .brand-logo-link {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    flex-shrink: 1;
+  }
+
+  .brand-logo-img {
+    height: 34px;
+    width: auto;
+    max-width: 145px;
+    object-fit: contain;
+  }
+
+  /* Desktop search input is hidden in favor of mobile dropdown */
+  .header-search-form {
+    display: none;
+  }
+
+  .mobile-search-toggle-btn {
+    display: inline-flex !important;
+  }
+
+  .mobile-search-toggle-btn.active {
+    background-color: var(--primary-light);
+    color: var(--primary);
+    border-color: var(--primary);
+  }
+
+  .header-actions {
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .header-btn {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    position: relative;
+  }
+
+  .header-btn .header-btn-label {
+    display: none !important; /* Hide text label on mobile, preserve bookmark badge */
+  }
+
+  .header-btn .bookmark-count-badge {
+    display: inline-flex !important;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--accent);
+    color: #FFFFFF;
+    font-size: 0.65rem;
+    font-weight: 700;
+    min-width: 17px;
+    height: 17px;
+    line-height: 17px;
+    border-radius: 999px;
+    padding: 0 4px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    border: 2px solid var(--bg-card);
+  }
+
+  .theme-toggle-btn {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Horizontal swipe category strip under header */
+  .site-nav {
+    display: block;
+    background-color: #0A387E;
+    padding: 6px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 2px 14px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .nav-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-item a {
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-full);
+    border-bottom: none;
+    transition: all 0.2s ease;
+  }
+
+  .nav-item.active a,
+  .nav-item a:active {
+    background-color: var(--accent);
+    color: #FFFFFF;
+    font-weight: 700;
+  }
+
+  /* --------------------------------------------------
+     2. Body Area - Layout, Grids & Containers
+     -------------------------------------------------- */
+  .container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .main-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin: 18px 0;
+  }
+
+  .main-column,
+  .sidebar-column {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* --------------------------------------------------
+     3. Body Area - Breaking News Ticker
+     -------------------------------------------------- */
+  .breaking-ticker-wrapper {
+    padding: 6px 0;
+  }
+
+  .ticker-inner {
+    gap: 8px;
+  }
+
+  .ticker-label {
+    padding: 3px 8px;
+    font-size: 0.75rem;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+
+  .ticker-label svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .ticker-content {
+    min-width: 0;
+    font-size: 0.85rem;
+    gap: 6px;
+  }
+
+  .ticker-badge {
+    font-size: 0.675rem;
+    padding: 1px 6px;
+  }
+
+  .ticker-link {
+    font-size: 0.85rem;
+  }
+
+  .ticker-date {
+    display: none; /* Hide date on mobile to maximize headline visibility */
+  }
+
+  /* --------------------------------------------------
+     4. Body Area - Section Headers & Titles
+     -------------------------------------------------- */
+  .section-header {
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+  }
+
+  .section-title-wrap {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+    line-height: 1.35;
+    word-break: break-word;
+    gap: 8px;
+  }
+
+  .section-title svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  .section-title::after {
+    bottom: -9px;
+    width: 45px;
+    height: 2.5px;
+  }
+
+  .section-more-link {
+    font-size: 0.825rem;
+    flex-shrink: 0;
+  }
+
+  .jobs-section {
+    margin-bottom: 24px !important;
+  }
+
+  /* --------------------------------------------------
+     5. Body Area - Job Cards & Lists
+     -------------------------------------------------- */
+  .job-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .job-card {
+    padding: 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .job-card-header {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .org-logo-wrapper {
+    width: 42px;
+    height: 42px;
+  }
+
+  .org-info {
+    min-width: 0;
+  }
+
+  .org-name-row {
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 2px;
+  }
+
+  .org-name {
+    font-size: 0.82rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  .verified-badge {
+    font-size: 0.675rem;
+    padding: 1px 5px;
+  }
+
+  .job-title {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .job-meta-grid {
+    gap: 5px;
+    font-size: 0.825rem;
+  }
+
+  .meta-item {
+    gap: 6px;
+  }
+
+  .meta-item svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .job-card-footer {
+    padding-top: 12px;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .status-badge {
+    font-size: 0.7rem;
+    padding: 2px 6px;
+  }
+
+  .deadline-date {
+    font-size: 0.75rem;
+  }
+
+  .view-details-btn {
+    padding: 6px 12px;
+    font-size: 0.825rem;
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* --------------------------------------------------
+     6. Body Area - Career Articles & Discovery Grids
+     -------------------------------------------------- */
+  .career-articles-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .career-card {
+    padding: 14px;
+    gap: 12px;
+    border-radius: var(--radius-md);
+  }
+
+  .career-thumb {
+    width: 54px;
+    height: 54px;
+  }
+
+  .career-title {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    word-break: break-word;
+  }
+
+  .career-desc {
+    font-size: 0.8rem;
+  }
+
+  .categories-mini-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .category-card-mini {
+    padding: 10px;
+    gap: 8px;
+    border-radius: var(--radius-sm);
+  }
+
+  .cat-mini-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .cat-mini-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .cat-mini-name {
+    font-size: 0.85rem;
+  }
+
+  .cat-mini-count {
+    font-size: 0.7rem;
+  }
+
+  .related-jobs-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  /* --------------------------------------------------
+     7. Body Area - Job Details Full Page (job.html)
+     -------------------------------------------------- */
+  .article-breadcrumbs {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    gap: 6px;
+    margin-bottom: 14px;
+    line-height: 1.4;
+  }
+
+  .article-breadcrumbs .current {
+    word-break: break-word;
+  }
+
+  .status-banner {
+    padding: 12px 14px;
+    gap: 10px;
+    margin-bottom: 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .banner-content h4 {
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+  }
+
+  .banner-content p {
+    font-size: 0.825rem;
+    line-height: 1.45;
+  }
+
+  .article-header {
+    padding: 18px;
+    margin-bottom: 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .article-category-row {
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+
+  .article-reading-time {
+    margin-left: 0;
+    font-size: 0.725rem;
+  }
+
+  .article-title {
+    font-size: 1.35rem;
+    line-height: 1.35;
+    word-break: break-word;
+    margin-bottom: 6px;
+  }
+
+  .article-subtitle {
+    font-size: 0.92rem;
+    line-height: 1.4;
+    margin-bottom: 14px;
+    word-break: break-word;
+  }
+
+  .article-author-meta {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 12px;
+  }
+
+  .author-logo {
+    width: 44px;
+    height: 44px;
+  }
+
+  .author-name {
+    font-size: 0.92rem;
+    word-break: break-word;
+  }
+
+  .article-dates {
+    font-size: 0.75rem;
+  }
+
+  .article-actions-top {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+    justify-content: flex-start;
+  }
+
+  .action-btn {
+    flex: 1;
+    justify-content: center;
+    padding: 7px 10px;
+    font-size: 0.8rem;
+  }
+
+  .job-quick-summary-box {
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .summary-box-title {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .summary-item {
+    padding: 8px 12px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .summary-item .label {
+    font-size: 0.775rem;
+  }
+
+  .summary-item .val {
+    font-size: 0.9rem;
+  }
+
+  .social-share-bar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    border-radius: var(--radius-md);
+    gap: 8px;
+  }
+
+  .share-label {
+    font-size: 0.85rem;
+    margin-bottom: 2px;
+    display: block;
+  }
+
+  .share-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    width: 100%;
+  }
+
+  .share-btn {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+    justify-content: center;
+    min-height: 38px;
+  }
+
+  .share-btn.copy-btn {
+    grid-column: 1 / -1;
+  }
+
+  .article-content-body {
+    padding: 18px;
+    margin-bottom: 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .content-section {
+    margin-bottom: 20px;
+  }
+
+  .content-section h3 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+    padding-left: 12px;
+    word-break: break-word;
+  }
+
+  .content-section p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    word-break: break-word;
+  }
+
+  .styled-bullet-list li {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    padding-left: 20px;
+    word-break: break-word;
+  }
+
+  .procedure-box {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    word-break: break-word;
+  }
+
+  .official-actions-row {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .btn-apply-large,
+  .btn-view-circular,
+  .btn-disabled-notice {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 12px 16px;
+    font-size: 0.925rem;
+  }
+
+  .article-source-box {
+    padding: 12px 14px;
+    font-size: 0.825rem;
+    line-height: 1.5;
+    word-break: break-word;
+  }
+
+  .related-jobs-section {
+    padding: 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .related-jobs-section h3 {
+    font-size: 1.15rem;
+    margin-bottom: 14px;
+  }
+
+  /* --------------------------------------------------
+     8. Body Area - Search & Category Filters
+     -------------------------------------------------- */
+  .category-hero-header {
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .cat-hero-title-row {
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: baseline;
+  }
+
+  .cat-hero-title {
+    font-size: 1.35rem;
+    word-break: break-word;
+  }
+
+  .cat-hero-title-en {
+    font-size: 0.85rem;
+  }
+
+  .cat-hero-count {
+    margin-left: 0;
+    font-size: 0.775rem;
+    padding: 2px 8px;
+  }
+
+  .cat-hero-desc {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .filter-bar-box {
+    padding: 14px;
+    margin-bottom: 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .filter-controls-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .filter-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    width: 100%;
+  }
+
+  .filter-label {
+    font-size: 0.8rem;
+  }
+
+  .filter-select {
+    width: 100%;
+    padding: 9px 12px;
+    font-size: 0.875rem;
+  }
+
+  .search-input-large-wrap {
+    padding: 8px 12px;
+    margin-bottom: 12px;
+  }
+
+  .search-input-large-wrap input {
+    font-size: 0.95rem;
+  }
+
+  .results-meta-bar {
+    margin-bottom: 12px;
+  }
+
+  .results-count-text {
+    font-size: 0.875rem;
+  }
+
+  .pagination-wrapper {
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 20px 0;
+  }
+
+  .page-btn {
+    min-width: 36px;
+    height: 36px;
+    padding: 0 8px;
+    font-size: 0.85rem;
+  }
+
+  /* --------------------------------------------------
+     9. Body Area - Static & Informational Pages
+     -------------------------------------------------- */
+  .content-page-card {
+    padding: 18px !important;
+    border-radius: var(--radius-md) !important;
+  }
+
+  .content-page-title {
+    font-size: 1.35rem !important;
+    line-height: 1.35 !important;
+    margin-bottom: 8px !important;
+  }
+
+  .contact-grid-layout {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .contact-details-box {
+    padding: 16px !important;
+  }
+
+  .error-page-card {
+    padding: 30px 16px !important;
+  }
+
+  .error-code-badge {
+    font-size: 3.5rem !important;
+  }
+
+  /* --------------------------------------------------
+     10. Body Area - Tables & Embedded Content
+     -------------------------------------------------- */
+  .table-responsive,
+  .article-content-body table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 14px 0;
+  }
+
+  .table-responsive th,
+  .table-responsive td,
+  .article-content-body th,
+  .article-content-body td {
+    padding: 8px 10px;
+    font-size: 0.825rem;
+    white-space: nowrap;
+  }
+
+  /* --------------------------------------------------
+     11. Body Area - Adsterra Placements on Mobile
+     -------------------------------------------------- */
+  /* Hide 160x600 skyscraper ad on mobile to avoid 600px tall empty column */
+  [data-ad-slot="sidebarSkyscraper"],
+  .ad-format-160-600 {
+    display: none !important;
+  }
+
+  .ad-format-728-90 {
+    min-height: 50px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .ad-format-300-250 {
+    max-width: 100%;
+    min-height: 200px;
+  }
+
+  .ad-format-468-60 {
+    max-width: 100%;
+    min-height: 50px;
+  }
+
+  .ad-placeholder-box {
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  .ad-placeholder-inner {
+    padding: 10px;
+  }
+
+  .ad-placeholder-title {
+    font-size: 0.8rem;
+  }
+
+  .ad-placeholder-sub {
+    font-size: 0.72rem;
+    text-align: center;
+    word-break: break-all;
+  }
+
+  /* --------------------------------------------------
+     12. Body Area - Newsletter & Footer
+     -------------------------------------------------- */
+  .newsletter-section {
+    padding: 30px 0;
+    margin-top: 35px;
+  }
+
+  .newsletter-inner {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .newsletter-text h3 {
+    font-size: 1.25rem;
+  }
+
+  .newsletter-text p {
+    font-size: 0.875rem;
+  }
+
+  .newsletter-form {
+    width: 100%;
+    max-width: 100%;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .newsletter-form input {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+
+  .newsletter-form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .site-footer {
+    padding: 35px 0 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 28px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+    padding-top: 18px;
+  }
+
+  /* --------------------------------------------------
+     13. Modal & Floating UI
+     -------------------------------------------------- */
+  .circular-modal {
+    padding: 10px;
+  }
+
+  .circular-modal-dialog {
+    max-height: 94vh;
+    border-radius: var(--radius-md);
+  }
+
+  .circular-modal-header {
+    padding: 12px 14px;
+  }
+
+  .circular-modal-header h4 {
+    font-size: 0.95rem;
+    word-break: break-word;
+  }
+
+  .modal-download-btn {
+    padding: 5px 10px;
+    font-size: 0.785rem;
+  }
+
+  .circular-modal-body {
+    padding: 10px;
+  }
+
+  .back-to-top-btn {
+    bottom: 18px;
+    right: 18px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .portal-toast {
+    width: calc(100% - 32px);
+    max-width: 380px;
+    text-align: center;
+    font-size: 0.85rem;
+    padding: 10px 16px;
+    bottom: 18px;
+  }
+}
+
+/* ====================================================================
+   BREAKPOINT: Max-width 480px (Standard Smartphones - e.g. iPhone SE, Pixel)
+   ==================================================================== */
+@media (max-width: 480px) {
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .header-main {
+    padding: 7px 0;
+    gap: 6px;
+  }
+
+  .header-brand-group {
+    gap: 6px;
+  }
+
+  .mobile-toggle-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand-logo-img {
+    height: 30px;
+    max-width: 125px;
+  }
+
+  .header-actions {
+    gap: 6px;
+  }
+
+  .header-btn,
+  .theme-toggle-btn,
+  .mobile-search-toggle-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .section-title {
+    font-size: 1.15rem;
+  }
+
+  .job-card {
+    padding: 14px;
+  }
+
+  .job-title {
+    font-size: 0.95rem;
+  }
+
+  .official-actions-row {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .categories-mini-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .category-card-mini {
+    padding: 8px;
+  }
+
+  .cat-mini-name {
+    font-size: 0.8rem;
+  }
+}
+
+/* ====================================================================
+   BREAKPOINT: Max-width 360px (Ultra-Compact Smartphones)
+   ==================================================================== */
+@media (max-width: 360px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .brand-logo-img {
+    height: 26px;
+    max-width: 105px;
+  }
+
+  .mobile-toggle-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .header-actions {
+    gap: 4px;
+  }
+
+  .header-btn,
+  .theme-toggle-btn,
+  .mobile-search-toggle-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .header-btn svg,
+  .theme-toggle-btn svg,
+  .mobile-search-toggle-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .section-title {
+    font-size: 1.05rem;
+  }
+
+  .job-card {
+    padding: 12px;
+  }
+
+  .categories-mini-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .category-card-mini {
+    padding: 6px;
+    gap: 6px;
+  }
+
+  .cat-mini-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .cat-mini-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .cat-mini-name {
+    font-size: 0.775rem;
+  }
+
+  .share-buttons {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .share-btn {
+    font-size: 0.725rem;
+    padding: 6px;
+    min-height: 34px;
+  }
+
+  .content-page-card {
+    padding: 12px !important;
+  }
+
+  .content-page-title {
+    font-size: 1.2rem !important;
+  }
+}

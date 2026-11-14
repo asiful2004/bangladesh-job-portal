@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80">
+  <defs>
+    <linearGradient id="portalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D47A1" />
+      <stop offset="100%" stop-color="#1976D2" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9800" />
+      <stop offset="100%" stop-color="#F57C00" />
+    </linearGradient>
+  </defs>
+  <!-- Icon Mark -->
+  <g transform="translate(10, 10)">
+    <rect x="0" y="0" width="60" height="60" rx="14" fill="url(#portalGrad)"/>
+    <circle cx="46" cy="14" r="7" fill="url(#accentGrad)" stroke="#FFFFFF" stroke-width="2"/>
+    <!-- Briefcase & Career Icon -->
+    <path d="M22 23h16a3 3 0 0 1 3 3v2H19v-2a3 3 0 0 1 3-3z" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+    <rect x="15" y="28" width="30" height="22" rx="4" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+    <path d="M15 35c4 4 10 7 15 7s11-3 15-7" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+    <circle cx="30" cy="37" r="2.5" fill="#FF9800"/>
+  </g>
+  <!-- Text Brand -->
+  <text x="82" y="40" font-family="'Hind Siliguri', 'Segoe UI', Arial, sans-serif" font-size="28" font-weight="700" fill="#0D47A1">চাকরি<tspan fill="#FF9800">বার্তা</tspan></text>
+  <text x="84" y="58" font-family="'Inter', sans-serif" font-size="11" font-weight="600" letter-spacing="1.5" fill="#5F6368">BD JOB NEWS &amp; CAREER</text>
+</svg>

@@ -1,0 +1,8 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" rx="20" fill="#1B5E20"/>
+  <rect x="6" y="6" width="108" height="108" rx="16" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+  <circle cx="60" cy="46" r="26" fill="rgba(255,255,255,0.15)"/>
+  <text x="60" y="52" font-family="'Segoe UI Emoji', sans-serif" font-size="24" text-anchor="middle">🏛️</text>
+  <text x="60" y="86" font-family="'Inter', sans-serif" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">BPSC</text>
+  <text x="60" y="103" font-family="'Hind Siliguri', 'Segoe UI', sans-serif" font-size="10" font-weight="600" fill="rgba(255,255,255,0.85)" text-anchor="middle">বিপিএসসি</text>
+</svg>

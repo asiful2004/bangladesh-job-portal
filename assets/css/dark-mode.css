@@ -1,0 +1,217 @@
+/**
+ * ====================================================================
+ * CHAKRI BARTA - DARK MODE THEME STYLES (DARK-MODE.CSS)
+ * ====================================================================
+ */
+
+[data-theme="dark"], html.dark {
+  --primary: #42A5F5;
+  --primary-hover: #64B5F6;
+  --primary-light: rgba(66, 165, 245, 0.12);
+  --secondary: #1E1E1E;
+  --accent: #FFB74D;
+  --accent-hover: #FFA726;
+  --accent-light: rgba(255, 183, 77, 0.15);
+
+  --bg-page: #0F172A;
+  --bg-card: #1E293B;
+  --bg-subtle: #334155;
+  --bg-header: #0F172A;
+  --border-color: #334155;
+  --border-light: #1E293B;
+
+  --text-main: #F1F5F9;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  --text-inverse: #0F172A;
+
+  --status-active-bg: rgba(46, 125, 50, 0.2);
+  --status-active-text: #81C784;
+  --status-active-border: rgba(46, 125, 50, 0.4);
+
+  --status-closing-bg: rgba(230, 81, 0, 0.2);
+  --status-closing-text: #FFB74D;
+  --status-closing-border: rgba(230, 81, 0, 0.4);
+
+  --status-expired-bg: rgba(198, 40, 40, 0.2);
+  --status-expired-text: #E57373;
+  --status-expired-border: rgba(198, 40, 40, 0.4);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  --shadow-hover: 0 12px 20px -3px rgba(0, 0, 0, 0.6);
+}
+
+/* Header & Nav in Dark Mode */
+[data-theme="dark"] .top-bar {
+  background-color: #0B132B;
+}
+
+[data-theme="dark"] .site-header {
+  background-color: #0F172A;
+  border-bottom-color: #1E293B;
+}
+
+[data-theme="dark"] .site-nav {
+  background-color: #0B132B;
+}
+
+[data-theme="dark"] .breaking-ticker-wrapper {
+  background-color: #1E293B;
+  border-bottom-color: #334155;
+}
+
+[data-theme="dark"] .ticker-link {
+  color: #F1F5F9;
+}
+
+/* Ad Placements in Dark Mode */
+[data-theme="dark"] .ad-placeholder-box {
+  background: linear-gradient(135deg, rgba(66, 165, 245, 0.05) 0%, rgba(255, 183, 77, 0.05) 100%);
+  border-color: #475569;
+}
+
+[data-theme="dark"] .ad-placeholder-title {
+  color: #F1F5F9;
+}
+
+[data-theme="dark"] .ad-placeholder-sub {
+  color: #94A3B8;
+}
+
+[data-theme="dark"] .ad-placeholder-sub code {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #FFB74D;
+}
+
+/* Job Cards in Dark Mode */
+[data-theme="dark"] .job-card {
+  background-color: #1E293B;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .job-card:hover {
+  border-color: #42A5F5;
+}
+
+[data-theme="dark"] .job-card.is-expired {
+  background-color: #182234;
+}
+
+[data-theme="dark"] .org-logo-wrapper {
+  background-color: #334155;
+  border-color: #475569;
+}
+
+[data-theme="dark"] .org-name {
+  color: #CBD5E1;
+}
+
+[data-theme="dark"] .verified-badge {
+  background-color: rgba(66, 165, 245, 0.15);
+  color: #64B5F6;
+}
+
+/* Article Page in Dark Mode */
+[data-theme="dark"] .summary-item {
+  background-color: #0F172A;
+}
+
+[data-theme="dark"] .summary-item.deadline-highlight {
+  background-color: rgba(255, 183, 77, 0.15);
+  border-left-color: #FFB74D;
+}
+
+[data-theme="dark"] .procedure-box {
+  background-color: #0F172A;
+  color: #F1F5F9;
+}
+
+[data-theme="dark"] .source-info {
+  background-color: rgba(66, 165, 245, 0.1);
+  color: #90CAF9;
+}
+
+[data-theme="dark"] .btn-secondary {
+  background-color: #1E293B;
+  color: #42A5F5;
+  border-color: #42A5F5;
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+  background-color: rgba(66, 165, 245, 0.15);
+}
+
+/* Modal in Dark Mode */
+[data-theme="dark"] .circular-modal-dialog {
+  background-color: #1E293B;
+}
+
+[data-theme="dark"] .circular-modal-header {
+  background-color: #0F172A;
+  border-bottom-color: #334155;
+}
+
+[data-theme="dark"] .circular-modal-body {
+  background-color: #0B132B;
+}
+
+/* Forms & Inputs in Dark Mode */
+[data-theme="dark"] .search-input-wrapper,
+[data-theme="dark"] .search-input-large-wrap {
+  background-color: #0F172A;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .search-input-wrapper:focus-within,
+[data-theme="dark"] .search-input-large-wrap:focus-within {
+  border-color: #42A5F5;
+  background-color: #0B132B;
+}
+
+[data-theme="dark"] .search-suggestions-dropdown {
+  background-color: #1E293B;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .suggestion-item:hover {
+  background-color: #334155;
+}
+
+[data-theme="dark"] .filter-select {
+  background-color: #1E293B;
+  border-color: #334155;
+  color: #F1F5F9;
+}
+
+[data-theme="dark"] .article-breadcrumbs {
+  background-color: #1E293B;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .site-footer {
+  background-color: #070D1D;
+  border-top: 1px solid #1E293B;
+}
+
+/* Mobile Search Bar in Dark Mode */
+[data-theme="dark"] .mobile-search-bar {
+  background-color: #0F172A;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .mobile-search-form {
+  background-color: #1E293B;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .mobile-search-form:focus-within {
+  background-color: #0B132B;
+  border-color: #42A5F5;
+}
+
+[data-theme="dark"] .mobile-search-close:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #F1F5F9;
+}

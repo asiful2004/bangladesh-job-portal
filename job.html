@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>নিয়োগ বিজ্ঞপ্তি বিস্তারিত | চাকরি বার্তা</title>
+  
+  <!-- SEO Meta will be dynamically updated by seo.js & app.js -->
+  <meta name="description" content="বাংলাদেশ সরকারি, ব্যাংক, বেসরকারি চাকরির বিস্তারিত নিয়োগ বিজ্ঞপ্তি, যোগ্যতা ও আবেদন নির্দেশিকা।">
+  <meta name="author" content="Chakri Barta">
+  <meta name="robots" content="index, follow">
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <script src="assets/js/theme.js"></script>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <aside class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <div class="top-date-display">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span>নিয়োগ বিজ্ঞপ্তি বিস্তারিত বিবরণ ও আবেদন প্রক্রিয়া</span>
+        </div>
+      </div>
+      <div class="top-bar-right">
+        <nav class="top-links">
+          <a href="about.html">আমাদের সম্পর্কে</a>
+          <a href="contact.html">যোগাযোগ</a>
+          <a href="disclaimer.html">সতর্কতা নোটিশ</a>
+        </nav>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-main">
+      <div class="header-brand-group">
+        <button class="mobile-toggle-btn" id="mobile-menu-toggle" aria-label="মেনু খুলুন" title="মেনু">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+
+        <a href="index.html" class="brand-logo-link" aria-label="চাকরি বার্তা হোমপেজ">
+          <img src="assets/images/logo.svg" alt="চাকরি বার্তা লোগো" class="brand-logo-img" width="220" height="52">
+        </a>
+      </div>
+
+      <form class="header-search-form" id="header-search-form" role="search" aria-label="চাকরি অনুসন্ধান">
+        <div class="search-input-wrapper">
+          <input type="search" id="header-search-input" placeholder="সার্কুলার বা প্রতিষ্ঠান খুঁজুন..." autocomplete="off">
+          <button type="submit" class="search-submit-btn" aria-label="খুঁজুন">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+        </div>
+      </form>
+
+      <div class="header-actions">
+        <!-- Mobile Search Trigger Button -->
+        <button class="header-btn mobile-search-toggle-btn" id="mobile-search-toggle" aria-label="সার্চ খুলুন" title="অনুসন্ধান">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+
+        <a href="bookmarks.html" class="header-btn header-bookmark-btn" title="সংরক্ষিত বিজ্ঞপ্তি" aria-label="সংরক্ষিত বিজ্ঞপ্তি">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          <span class="header-btn-label">বুকমার্ক</span>
+          <span class="bookmark-count-badge" style="display:none;">০</span>
+        </a>
+
+        <button class="theme-toggle-btn" aria-label="ডার্ক মোড টগল" title="থিম পরিবর্তন">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Expandable Mobile Search Bar -->
+    <div class="mobile-search-bar" id="mobile-search-bar" aria-label="মোবাইল সার্চ">
+      <form class="mobile-search-form" id="mobile-search-form" role="search">
+        <input type="search" id="mobile-search-input" placeholder="সার্কুলার, প্রতিষ্ঠান বা পদবি খুঁজুন..." autocomplete="off">
+        <button type="submit" class="mobile-search-submit" aria-label="খুঁজুন">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <button type="button" class="mobile-search-close" id="mobile-search-close" aria-label="সার্চ বন্ধ করুন">&times;</button>
+      </form>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="site-nav" aria-label="প্রধান নেভিগেশন">
+      <div class="container">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html">হোম</a></li>
+          <li class="nav-item"><a href="category.html?cat=govt">সরকারি চাকরি</a></li>
+          <li class="nav-item"><a href="category.html?cat=bank">ব্যাংক জব</a></li>
+          <li class="nav-item"><a href="category.html?cat=private">বেসরকারি চাকরি</a></li>
+          <li class="nav-item"><a href="category.html?cat=ngo">এনজিও জব</a></li>
+          <li class="nav-item"><a href="category.html?cat=teaching">শিক্ষক নিয়োগ</a></li>
+          <li class="nav-item"><a href="category.html?cat=it">আইটি চাকরি</a></li>
+          <li class="nav-item"><a href="category.html?cat=exam-results">পরীক্ষার ফলাফল</a></li>
+          <li class="nav-item"><a href="category.html?cat=admit-card">প্রবেশপত্র</a></li>
+          <li class="nav-item"><a href="category.html?cat=career-advice">ক্যারিয়ার গাইড</a></li>
+          <li class="nav-item"><a href="search.html">অনুসন্ধান</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <div class="drawer-header">
+      <img src="assets/images/logo.svg" alt="চাকরি বার্তা" class="drawer-logo" width="160" height="40">
+      <button class="drawer-close-btn" id="mobile-menu-close">&times;</button>
+    </div>
+    <ul class="drawer-nav-list">
+      <li class="drawer-nav-item"><a href="index.html">হোমপেজ</a></li>
+      <li class="drawer-nav-item"><a href="category.html?cat=govt">সরকারি চাকরি</a></li>
+      <li class="drawer-nav-item"><a href="category.html?cat=bank">ব্যাংক জব</a></li>
+      <li class="drawer-nav-item"><a href="category.html?cat=private">বেসরকারি চাকরি</a></li>
+      <li class="drawer-nav-item"><a href="category.html?cat=ngo">এনজিও জব</a></li>
+      <li class="drawer-nav-item"><a href="category.html?cat=teaching">শিক্ষক নিয়োগ</a></li>
+      <li class="drawer-nav-item"><a href="category.html?cat=it">আইটি ও প্রযুক্তি</a></li>
+      <li class="drawer-nav-item"><a href="category.html?cat=exam-results">পরীক্ষার ফলাফল</a></li>
+      <li class="drawer-nav-item"><a href="category.html?cat=admit-card">প্রবেশপত্র</a></li>
+      <li class="drawer-nav-item"><a href="category.html?cat=career-advice">ক্যারিয়ার পরামর্শ</a></li>
+      <li class="drawer-nav-item"><a href="search.html">সব সার্কুলার সার্চ</a></li>
+      <li class="drawer-nav-item"><a href="bookmarks.html">সংরক্ষিত বুকমার্ক</a></li>
+    </ul>
+  </aside>
+
+  <!-- Top Ad Slot -->
+  <div class="container">
+    <div data-ad-placement="header"></div>
+  </div>
+
+  <!-- Job Details Layout -->
+  <main class="container">
+    <div class="main-layout-grid">
+
+      <!-- Main Article Column (Dynamically filled by app.js) -->
+      <div class="main-column" id="job-detail-main">
+        <div style="padding: 60px 20px; text-align: center; color: var(--text-muted);">
+          <p>বিজ্ঞপ্তির বিস্তারিত তথ্য লোড হচ্ছে...</p>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="sidebar-column">
+        <!-- Sidebar Ad Slot 1 (300x250) -->
+        <div data-ad-placement="sidebar"></div>
+
+        <!-- Latest Alerts Widget -->
+        <div class="sidebar-widget">
+          <h3 class="widget-title">জরুরি সতর্কবার্তা</h3>
+          <div style="font-size:0.875rem; line-height:1.6; color:var(--text-secondary);">
+            <p><strong>১. অফিসিয়াল যাচাইকরণ:</strong> যেকোনো সরকারি বা বেসরকারি প্রতিষ্ঠানে আবেদনের পূর্বে অফিসিয়াল প্রজ্ঞাপন ভালোভাবে দেখে নিন।</p>
+            <p style="margin-top:10px;"><strong>২. আর্থিক সতর্কতা:</strong> কোনো চাকরির আবেদনের জন্য অননুমোদিত ব্যক্তি বা মধ্যস্থতাকারীকে টাকা দেবেন না। সরকারি ফি টেলিটক বা ব্যাংকিং গেটওয়ের মাধ্যমে দিন।</p>
+          </div>
+        </div>
+
+        <!-- Sidebar Ad Slot 2 (Sticky Skyscraper 160x600) -->
+        <div data-ad-placement="sidebarSkyscraper"></div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- Pre-Footer Banner Ad -->
+  <div class="container">
+    <div data-ad-placement="footer"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col-about">
+          <img src="assets/images/logo.svg" alt="চাকরি বার্তা" class="footer-logo" width="200" height="50">
+          <p class="footer-desc">
+            চাকরি বার্তা বাংলাদেশের চাকরিপ্রার্থীদের জন্য একটি নির্ভরযোগ্য তথ্যমাধ্যম। আমরা স্বচ্ছতা ও নির্ভুল তথ্য পরিবেশনে প্রতিশ্রুতিবদ্ধ।
+          </p>
+        </div>
+        <div>
+          <h4 class="footer-title">ক্যাটাগরি</h4>
+          <ul class="footer-links">
+            <li><a href="category.html?cat=govt">সরকারি চাকরি</a></li>
+            <li><a href="category.html?cat=bank">ব্যাংক জব</a></li>
+            <li><a href="category.html?cat=private">বেসরকারি চাকরি</a></li>
+            <li><a href="category.html?cat=ngo">এনজিও চাকরি</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">সেবাসমূহ</h4>
+          <ul class="footer-links">
+            <li><a href="category.html?cat=exam-results">পরীক্ষার ফলাফল</a></li>
+            <li><a href="category.html?cat=admit-card">প্রবেশপত্র</a></li>
+            <li><a href="category.html?cat=career-advice">ক্যারিয়ার গাইড</a></li>
+            <li><a href="bookmarks.html">সংরক্ষিত সার্কুলার</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">আইনি তথ্য</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">আমাদের সম্পর্কে</a></li>
+            <li><a href="privacy-policy.html">গোপনীয়তা নীতিমালা</a></li>
+            <li><a href="disclaimer.html">দায়মুক্তি বিজ্ঞপ্তি</a></li>
+            <li><a href="terms.html">শর্তাবলী</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; ২০২৬ চাকরি বার্তা (Chakri Barta). সর্বস্বত্ব সংরক্ষিত।</p>
+        <p>অফিসিয়াল নিয়োগ বিজ্ঞপ্তি প্রকাশের তথ্যসূত্র অনুযায়ী সংগৃহীত।</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top-btn" id="back-to-top-btn" aria-label="উপরে যান">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- Scripts -->
+  <script src="assets/js/ads-config.js"></script>
+  <script src="assets/js/seo.js"></script>
+  <script src="assets/js/jobs.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
