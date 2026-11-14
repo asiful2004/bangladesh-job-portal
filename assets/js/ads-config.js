@@ -20,7 +20,7 @@ const ADS_CONFIG = {
   // Demo Mode: When true, displays elegant responsive visual placeholders
   // indicating the ad format and instructions. Set to false when ready
   // to insert live Adsterra script codes.
-  demoMode: true,
+  demoMode: false,
 
   // Individual Slot Configuration
   slots: {
@@ -116,26 +116,128 @@ const ADS_CONFIG = {
 };
 
 /**
- * AdSlot Component Generator
- * Returns the HTML string for a specific ad slot container
+ * AdSlot Component Generator & Safe Execution Engine
  */
+function renderSlotInto(container, slotKey, customClass = "") {
+  if (!ADS_CONFIG.enabled) {
+    container.innerHTML = "";
+    return;
+  }
+
+  const slot = ADS_CONFIG.slots[slotKey];
+  if (!slot || !slot.enabled) {
+    container.innerHTML = "";
+    return;
+  }
+
+  const snippet = (slot.scriptSnippet || "").trim();
+  const isLive = !ADS_CONFIG.demoMode && snippet && !snippet.includes("Placeholder");
+  const containerId = `ad-slot-${slotKey}-${Math.random().toString(36).substring(2, 7)}`;
+  const formatText = slot.mobileFormat ? `${slot.format} / ${slot.mobileFormat}` : slot.format;
+  const formatClass = `ad-format-${slot.format.replace("x", "-")}`;
+
+  if (!isLive) {
+    // Demo Mode or placeholder
+    container.innerHTML = `
+      <div class="ad-placement-wrapper ${customClass}" data-ad-slot="${slotKey}" id="${containerId}">
+        <div class="ad-label">
+          <span class="ad-badge">বিজ্ঞাপন / Advertisement</span>
+          <span class="ad-size">${formatText}</span>
+        </div>
+        <div class="ad-placeholder-box ${formatClass}">
+          <div class="ad-placeholder-inner">
+            <svg class="ad-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+            <p class="ad-placeholder-title">Adsterra Ad Placement (${slot.format})</p>
+            <p class="ad-placeholder-sub">রেসপন্সিভ বিজ্ঞাপন স্লট • Configure in <code>assets/js/ads-config.js</code></p>
+          </div>
+        </div>
+      </div>
+    `;
+    return;
+  }
+
+  // Live Mode: Build wrapper
+  container.innerHTML = `
+    <div class="ad-placement-wrapper ${customClass}" data-ad-slot="${slotKey}" id="${containerId}">
+      <div class="ad-label">
+        <span class="ad-badge">বিজ্ঞাপন / Advertisement</span>
+      </div>
+      <div class="ad-live-container ${formatClass}"></div>
+    </div>
+  `;
+
+  const liveTarget = container.querySelector(".ad-live-container");
+  if (!liveTarget) return;
+
+  if (snippet.includes("<script")) {
+    // Adsterra / script banner: render in an isolated friendly iframe so document.write & atOptions execute safely without blocking
+    const isMobile = window.innerWidth <= 768;
+    const dimensions = (isMobile && slot.mobileFormat) ? slot.mobileFormat.split("x") : slot.format.split("x");
+    const width = parseInt(dimensions[0], 10) || 728;
+    const height = parseInt(dimensions[1], 10) || 90;
+
+    const iframe = document.createElement("iframe");
+    iframe.className = "ad-live-iframe";
+    iframe.width = width;
+    iframe.height = height;
+    iframe.style.border = "none";
+    iframe.style.overflow = "hidden";
+    iframe.style.maxWidth = "100%";
+    iframe.scrolling = "no";
+    iframe.setAttribute("aria-label", "Advertisement");
+
+    liveTarget.appendChild(iframe);
+
+    try {
+      const doc = iframe.contentWindow.document;
+      doc.open();
+      doc.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="utf-8">
+          <style>
+            body { margin: 0; padding: 0; overflow: hidden; display: flex; justify-content: center; align-items: center; background: transparent; }
+          </style>
+        </head>
+        <body>
+          ${snippet}
+        </body>
+        </html>
+      `);
+      doc.close();
+    } catch (err) {
+      console.warn("Could not inject ad iframe:", err);
+    }
+  } else {
+    // Pure HTML / image banner
+    liveTarget.innerHTML = snippet;
+  }
+}
+
 function createAdContainer(slotKey, customClass = "") {
   if (!ADS_CONFIG.enabled) return "";
-  
   const slot = ADS_CONFIG.slots[slotKey];
   if (!slot || !slot.enabled) return "";
 
   const containerId = `ad-slot-${slotKey}-${Math.random().toString(36).substring(2, 7)}`;
   const formatText = slot.mobileFormat ? `${slot.format} / ${slot.mobileFormat}` : slot.format;
+  const formatClass = `ad-format-${slot.format.replace("x", "-")}`;
+  const snippet = (slot.scriptSnippet || "").trim();
+  const isLive = !ADS_CONFIG.demoMode && snippet && !snippet.includes("Placeholder");
 
-  if (ADS_CONFIG.demoMode || !slot.scriptSnippet || slot.scriptSnippet.includes("Placeholder")) {
+  if (!isLive) {
     return `
       <div class="ad-placement-wrapper ${customClass}" data-ad-slot="${slotKey}" id="${containerId}">
         <div class="ad-label">
           <span class="ad-badge">বিজ্ঞাপন / Advertisement</span>
           <span class="ad-size">${formatText}</span>
         </div>
-        <div class="ad-placeholder-box ad-format-${slot.format.replace("x", "-")}">
+        <div class="ad-placeholder-box ${formatClass}">
           <div class="ad-placeholder-inner">
             <svg class="ad-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
               <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
@@ -150,15 +252,18 @@ function createAdContainer(slotKey, customClass = "") {
     `;
   }
 
-  // Live Mode: Return container ready for ad script injection
+  // If live mode, return wrapper and mount iframe asynchronously
+  setTimeout(() => {
+    const el = document.getElementById(containerId);
+    if (el && el.parentElement) {
+      renderSlotInto(el.parentElement, slotKey, customClass);
+    }
+  }, 50);
+
   return `
     <div class="ad-placement-wrapper ${customClass}" data-ad-slot="${slotKey}" id="${containerId}">
-      <div class="ad-label">
-        <span class="ad-badge">বিজ্ঞাপন / Advertisement</span>
-      </div>
-      <div class="ad-live-container ad-format-${slot.format.replace("x", "-")}">
-        ${slot.scriptSnippet}
-      </div>
+      <div class="ad-label"><span class="ad-badge">বিজ্ঞাপন / Advertisement</span></div>
+      <div class="ad-live-container ${formatClass}"></div>
     </div>
   `;
 }
@@ -200,17 +305,19 @@ function AdSlotArticleBottom(customClass = "") {
  * Initializes and injects ads into pre-existing HTML placeholder tags
  * Elements with attribute: <div data-ad-placement="header"></div>
  */
-function initAdPlacements() {
+function initAdPlacements(root) {
+  const targetRoot = (root && typeof root.querySelectorAll === "function") ? root : document;
+
   if (!ADS_CONFIG.enabled) {
-    document.querySelectorAll("[data-ad-placement]").forEach(el => el.remove());
+    targetRoot.querySelectorAll("[data-ad-placement]").forEach(el => el.remove());
     return;
   }
 
-  const placements = document.querySelectorAll("[data-ad-placement]");
+  const placements = targetRoot.querySelectorAll("[data-ad-placement]");
   placements.forEach(container => {
     const slotKey = container.getAttribute("data-ad-placement");
     if (slotKey && ADS_CONFIG.slots[slotKey]) {
-      container.innerHTML = createAdContainer(slotKey);
+      renderSlotInto(container, slotKey);
     }
   });
 }

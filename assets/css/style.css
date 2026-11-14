@@ -591,6 +591,22 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 
+.ad-live-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.ad-live-iframe {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  border: none;
+}
+
 .ad-placeholder-inner {
   padding: 16px;
   display: flex;

@@ -470,7 +470,7 @@ function renderJobFullView(job, statusInfo, isExpired) {
     </header>
 
     <!-- Ad Slot: Below Title -->
-    <div class="article-ad-slot">
+    <div class="article-ad-slot" data-ad-placement="articleBelowTitle">
       ${typeof AdSlotArticleBelowTitle === "function" ? AdSlotArticleBelowTitle() : ""}
     </div>
 
@@ -551,7 +551,7 @@ function renderJobFullView(job, statusInfo, isExpired) {
       </section>
 
       <!-- In-Article Ad Slot -->
-      <div class="in-article-ad">
+      <div class="in-article-ad" data-ad-placement="inArticle">
         ${typeof AdSlotInArticle === "function" ? AdSlotInArticle() : ""}
       </div>
 
@@ -620,7 +620,7 @@ function renderJobFullView(job, statusInfo, isExpired) {
     </article>
 
     <!-- Ad Slot: Before Related Articles -->
-    <div class="article-ad-slot">
+    <div class="article-ad-slot" data-ad-placement="articleBottom">
       ${typeof AdSlotArticleBottom === "function" ? AdSlotArticleBottom() : ""}
     </div>
 
@@ -632,6 +632,11 @@ function renderJobFullView(job, statusInfo, isExpired) {
       </div>
     </section>
   `;
+
+  // Initialize any ads inside the newly rendered article
+  if (typeof initAdPlacements === "function") {
+    initAdPlacements(container);
+  }
 
   // Render Related Jobs
   renderRelatedJobs(job);
