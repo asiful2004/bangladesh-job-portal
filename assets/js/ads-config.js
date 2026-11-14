@@ -49,7 +49,16 @@ const ADS_CONFIG = {
       format: "300x250",
       description: "Sidebar Rectangle Ad",
       // Paste your Adsterra 300x250 JavaScript snippet here:
-      scriptSnippet: `<!-- Adsterra 300x250 Sidebar Ad Code Placeholder -->`
+      scriptSnippet: `<script>
+  atOptions = {
+    'key' : 'af106d42627f92cbb14e1dfdab4ffa51',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://bauval.org/22/af106d42627f92cbb14e1dfdab4ffa51"></script>`
     },
 
     // 3. Sidebar Sticky Skyscraper (160x600 or 300x600)
@@ -57,7 +66,16 @@ const ADS_CONFIG = {
       enabled: true,
       format: "160x600",
       description: "Sidebar Sticky Skyscraper",
-      scriptSnippet: `<!-- Adsterra 160x600 Skyscraper Ad Code Placeholder -->`
+      scriptSnippet: `<script>
+  atOptions = {
+    'key' : 'af106d42627f92cbb14e1dfdab4ffa51',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://bauval.org/22/af106d42627f92cbb14e1dfdab4ffa51"></script>`
     },
 
     // 4. In-Article Ad (300x250 or Responsive Banner)
@@ -65,7 +83,16 @@ const ADS_CONFIG = {
       enabled: true,
       format: "300x250",
       description: "Within Article Body Ad",
-      scriptSnippet: `<!-- Adsterra 300x250 In-Article Ad Code Placeholder -->`
+      scriptSnippet: `<script>
+  atOptions = {
+    'key' : 'af106d42627f92cbb14e1dfdab4ffa51',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://bauval.org/22/af106d42627f92cbb14e1dfdab4ffa51"></script>`
     },
 
     // 5. Between Job Cards (Responsive 728x90 / 468x60 / 300x250)
@@ -74,7 +101,16 @@ const ADS_CONFIG = {
       format: "728x90",
       mobileFormat: "300x250",
       description: "Between Job Cards Banner",
-      scriptSnippet: `<!-- Adsterra Between-Cards Ad Code Placeholder -->`
+      scriptSnippet: `<script>
+  atOptions = {
+    'key' : 'af106d42627f92cbb14e1dfdab4ffa51',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://bauval.org/22/af106d42627f92cbb14e1dfdab4ffa51"></script>`
     },
 
     // 6. Before Footer Banner (728x90)
@@ -83,7 +119,16 @@ const ADS_CONFIG = {
       format: "728x90",
       mobileFormat: "320x50",
       description: "Pre-Footer Leaderboard",
-      scriptSnippet: `<!-- Adsterra Pre-Footer 728x90 Ad Code Placeholder -->`
+      scriptSnippet: `<script>
+  atOptions = {
+    'key' : 'af106d42627f92cbb14e1dfdab4ffa51',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://bauval.org/22/af106d42627f92cbb14e1dfdab4ffa51"></script>`
     },
 
     // 7. Category Page Top Banner (728x90)
@@ -92,7 +137,16 @@ const ADS_CONFIG = {
       format: "728x90",
       mobileFormat: "320x50",
       description: "Category Page Top Banner",
-      scriptSnippet: `<!-- Adsterra Category Top Ad Code Placeholder -->`
+      scriptSnippet: `<script>
+  atOptions = {
+    'key' : 'af106d42627f92cbb14e1dfdab4ffa51',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://bauval.org/22/af106d42627f92cbb14e1dfdab4ffa51"></script>`
     },
 
     // 8. Article Below Title Banner (468x60 / 320x50)
@@ -110,7 +164,16 @@ const ADS_CONFIG = {
       format: "728x90",
       mobileFormat: "300x250",
       description: "Article Bottom Banner",
-      scriptSnippet: `<!-- Adsterra Article Bottom Ad Code Placeholder -->`
+      scriptSnippet: `<script>
+  atOptions = {
+    'key' : 'af106d42627f92cbb14e1dfdab4ffa51',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://bauval.org/22/af106d42627f92cbb14e1dfdab4ffa51"></script>`
     }
   }
 };
