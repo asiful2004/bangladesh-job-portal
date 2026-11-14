@@ -31,7 +31,16 @@ const ADS_CONFIG = {
       mobileFormat: "320x50",
       description: "Header Leaderboard Banner",
       // Paste your Adsterra 728x90 JavaScript snippet or iframe code here:
-      scriptSnippet: `<!-- Adsterra 728x90 Header Ad Code Placeholder -->`
+      scriptSnippet: `<script>
+  atOptions = {
+    'key' : 'af106d42627f92cbb14e1dfdab4ffa51',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://bauval.org/22/af106d42627f92cbb14e1dfdab4ffa51"></script>`
     },
 
     // 2. Sidebar Medium Rectangle (300x250)
